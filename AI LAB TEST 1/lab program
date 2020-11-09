@@ -6,7 +6,7 @@ from collections import defaultdict
 # list representation 
 class Graph: 
   
-    def _init_(self,vertices): 
+    def __init__(self,vertices): 
   
         # No. of vertices 
         self.V = vertices 
@@ -43,3 +43,23 @@ class Graph:
             if (self.DLS(src, target, i)): 
                 return True
         return False
+  
+# Create a graph given in the above diagram 
+g = Graph (8); 
+g.addEdge(0, 1) 
+g.addEdge(0, 2) 
+g.addEdge(0, 3) 
+g.addEdge(1, 4) 
+g.addEdge(2, 5) 
+g.addEdge(3, 7) 
+g.addEdge(4, 6)
+g.addEdge(5, 7)
+  
+target = 7; maxDepth = 3; src = 0
+  
+if g.IDDFS(src, target, maxDepth) == True: 
+    print ("Target is reachable from source " +
+        "within max depth") 
+else : 
+    print ("Target is NOT reachable from source " +
+        "within max depth") 
